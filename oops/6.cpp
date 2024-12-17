@@ -1,6 +1,5 @@
 #include <iostream.h>
-
-
+#include <string.h> // Use string.h for strcpy and strcat
 
 
 class MyString {
