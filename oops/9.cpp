@@ -1,5 +1,5 @@
-#include<iostream> // Use the standard iostream header
-using namespace std; // For convenience
+#include <iostream.h> // Correct header
+
 
 // Function overloads for swapping different types
 void swap(int &ix, int &iy);
