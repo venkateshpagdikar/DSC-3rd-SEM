@@ -1,45 +1,39 @@
-#include <iostream>
-#include <cstring> // For strcpy and strcat
-using namespace std;
+#include <iostream.h>
+
+
+
 
 class MyString {
-    char str[100]; // Increased buffer size for safer concatenation
+    char str[100];
 public:
-    // Default constructor
     MyString() {
         strcpy(str, "");
     }
 
-    // Constructor with const char* parameter
     MyString(const char* s) {
         strcpy(str, s);
     }
 
-    // Copy constructor
     MyString(const MyString& s) {
         strcpy(str, s.str);
     }
 
-    // Overloaded + operator to concatenate strings
     MyString operator+(const MyString& s2) const {
-        MyString temp; // Create a new object for the result
-        strcpy(temp.str, str); // Copy the current string
-        strcat(temp.str, " "); // Add a space
-        strcat(temp.str, s2.str); // Concatenate the second string
+        MyString temp;
+        strcpy(temp.str, str);
+        strcat(temp.str, " ");
+        strcat(temp.str, s2.str);
         return temp;
     }
 
-    // Friend function to overload << for output
     friend ostream& operator<<(ostream& print, const MyString& s);
 };
 
-// Overloading << operator
 ostream& operator<<(ostream& print, const MyString& s) {
     print << s.str;
     return print;
 }
 
-// Main function
 int main() {
     MyString s1("HERBERT");
     cout << "First string is: " << s1 << "\n";
