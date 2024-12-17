@@ -1,22 +1,26 @@
-#include <iostream>
-using namespace std;
+#include <iostream.h>
+
 
 class Swap {
-    int x, y; // Declare variables of Swap class
+    int temp, a, b;
 public:
-    // Parameterized constructor for inputs
-    Swap(int x, int y) : x(x), y(y) {}
-
-    // Friend function to swap values
+    Swap(int a, int b) {
+        this->a = a;
+        this->b = b;
+    }
     friend void swap(Swap&);
 };
 
-// Define the swap function outside the class scope
-void swap(Swap& s) {
-    // Local variable for swapping
-    int temp = s.x;
-    s.x = s.y;
-    s.y = temp;
+void swap(Swap& s1) {
+    cout << "\nBefore Swapping: " << s1.a << " " << s1.b;
+    s1.temp = s1.a;
+    s1.a = s1.b;
+    s1.b = s1.temp;
+    cout << "\nAfter Swapping: " << s1.a << " " << s1.b;
+}
 
-    cout << "\nBefore Swapping: x = " << s.y << ", y = " << temp;
-    cout << "\nAfter Swapping: x= s.mere traoubleshooting.
+int main() {
+    Swap s(4, 6);
+    swap(s);
+    return 0;
+}
