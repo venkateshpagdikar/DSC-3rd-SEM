@@ -1,5 +1,5 @@
-#include <iostream>
-using namespace std;
+#include <iostream.h>
+
 
 class student {
     int rno;
